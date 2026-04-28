@@ -5,6 +5,7 @@ import About from './components/sections/About'
 import Skills from './components/sections/Skills'
 import Projects from './components/sections/Projects'
 import Experience from './components/sections/Experience'
+import Resume from './components/sections/Resume'
 import Contact from './components/sections/Contact'
 import { skills } from './data/skills'
 import { projects } from './data/projects'
@@ -15,6 +16,7 @@ const navigationLinks = [
   { label: 'Skills', href: '#skills' },
   { label: 'Projects', href: '#projects' },
   { label: 'Experience', href: '#experience' },
+  { label: 'Resume', href: '#resume' },
   { label: 'Contact', href: '#contact' },
 ]
 
@@ -29,6 +31,7 @@ function App() {
         <Skills groups={skills} />
         <Projects projects={projects} />
         <Experience items={experience} />
+        <Resume />
         <Contact />
       </main>
 

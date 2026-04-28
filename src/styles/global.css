@@ -254,6 +254,7 @@ a {
 .content-card,
 .contact-card,
 .experience-card,
+.resume-card,
 .skill-card,
 .project-card {
   padding: 1.4rem;
@@ -261,6 +262,7 @@ a {
 
 .content-card p,
 .project-copy p,
+.resume-copy p,
 .contact-item a,
 .experience-points li {
   color: var(--text-secondary);
@@ -510,6 +512,138 @@ a {
   margin-top: 0.7rem;
 }
 
+.resume-card {
+  display: grid;
+  gap: 1.4rem;
+  align-items: center;
+  background:
+    linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(255, 255, 255, 0.92) 42%),
+    rgba(255, 255, 255, 0.94);
+}
+
+.resume-copy h3 {
+  margin: 0 0 0.85rem;
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
+}
+
+.resume-copy p {
+  margin: 0;
+}
+
+.resume-highlights {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1.15rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.resume-highlights li {
+  position: relative;
+  padding-left: 1.6rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.resume-highlights li::before {
+  content: '';
+  position: absolute;
+  top: 0.62rem;
+  left: 0;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--theme-color);
+  box-shadow: 0 0 0 0.35rem rgba(37, 99, 235, 0.11);
+}
+
+.resume-download-panel {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.resume-file-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.9rem;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid rgba(37, 99, 235, 0.18);
+  border-radius: 1.25rem;
+  background: #ffffff;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: 0 16px 30px rgba(37, 99, 235, 0.11);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.resume-file-card:hover,
+.resume-file-card:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--theme-color);
+  box-shadow: 0 18px 34px rgba(37, 99, 235, 0.16);
+  outline: none;
+}
+
+.resume-file-type {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, var(--theme-color), var(--theme-color-dark));
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.resume-file-details {
+  display: grid;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.resume-file-details strong {
+  overflow: hidden;
+  font-size: 1rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.resume-file-details small {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.resume-file-action {
+  grid-column: 1 / -1;
+  justify-self: start;
+  padding: 0.45rem 0.8rem;
+  border-radius: var(--radius-sm);
+  background: var(--surface-muted);
+  color: var(--theme-color-dark);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.resume-preview-link {
+  justify-self: start;
+  color: var(--theme-color-dark);
+  font-weight: 700;
+}
+
+.resume-preview-link:hover {
+  color: var(--theme-color);
+}
+
 .contact-card {
   display: grid;
   align-items: center;
@@ -593,6 +727,8 @@ a {
   .content-card,
   .skill-card,
   .project-content,
+  .resume-card,
+  .resume-file-card,
   .contact-card,
   .contact-item,
   .site-nav a {
@@ -606,8 +742,18 @@ a {
 
   .hero-actions,
   .tag-list,
-  .project-links {
+  .project-links,
+  .resume-preview-link {
     justify-content: center;
+  }
+
+  .resume-highlights li {
+    text-align: left;
+  }
+
+  .resume-file-action,
+  .resume-preview-link {
+    justify-self: center;
   }
 
   .experience-period {
@@ -649,6 +795,7 @@ a {
 
   .hero-grid,
   .project-card,
+  .resume-card,
   .contact-card {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }

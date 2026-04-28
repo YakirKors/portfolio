@@ -14,6 +14,9 @@ function Hero() {
 
           <div className="hero-actions">
             <Button href="#projects">View Projects</Button>
+            <Button href="#resume" variant="secondary">
+              View Resume
+            </Button>
             <Button href="#contact" variant="secondary">
               Contact Me
             </Button>
