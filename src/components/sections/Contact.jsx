@@ -6,6 +6,7 @@ const contactDetails = {
   // Update these contact details here if they change later.
   email: 'yakirkurs6@gmail.com',
   phone: '+972532403439',
+  linkedin: 'https://www.linkedin.com/in/yakir-kurs?trk=contact-info',
 }
 
 const contactItems = [
@@ -18,6 +19,12 @@ const contactItems = [
     label: 'Phone',
     value: contactDetails.phone,
     href: `tel:${contactDetails.phone.replace(/\s/g, '')}`,
+  },
+  {
+    label: 'LinkedIn',
+    value: 'linkedin.com/in/yakir-kurs',
+    href: contactDetails.linkedin,
+    isExternal: true,
   },
 ]
 
@@ -34,7 +41,11 @@ function Contact() {
           {contactItems.map((item) => (
             <div key={item.label} className="contact-item">
               <p className="contact-label">{item.label}</p>
-              <a href={item.href}>
+              <a
+                href={item.href}
+                target={item.isExternal ? '_blank' : undefined}
+                rel={item.isExternal ? 'noreferrer' : undefined}
+              >
                 {item.value}
               </a>
             </div>
