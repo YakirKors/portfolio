@@ -324,6 +324,7 @@ a {
 .tag-list {
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-start;
   gap: 0.65rem;
 }
 
@@ -342,24 +343,119 @@ a {
 .project-card {
   display: grid;
   gap: 1.2rem;
+  align-items: start;
 }
 
 .project-media {
-  overflow: hidden;
   border-radius: 1.25rem;
   border: 1px solid var(--border-color);
-  background: #f8fbff;
+  background:
+    linear-gradient(180deg, rgba(37, 99, 235, 0.08), rgba(37, 99, 235, 0.03));
+  padding: 1.15rem;
 }
 
-.project-media img {
+.project-media-shell {
+  width: min(100%, 20rem);
+  margin: 0 auto;
+  padding: 0.55rem;
+  border-radius: 2.2rem;
+  background: linear-gradient(180deg, #fdfefe, #eef4ff);
+  border: 1px solid rgba(37, 99, 235, 0.14);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 18px 36px rgba(15, 23, 42, 0.08);
+}
+
+.project-media-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  border-radius: 1.7rem;
+  background: #ffffff;
+}
+
+.project-media-track::-webkit-scrollbar {
+  display: none;
+}
+
+.project-media-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  aspect-ratio: 10 / 21;
+  padding: 0;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-media-slide img {
   width: 100%;
-  height: 100%;
-  min-height: 14rem;
-  object-fit: cover;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 1.4rem;
+  background: #ffffff;
+}
+
+.project-media-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 0.9rem;
+}
+
+.project-media-control {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  border: 1px solid rgba(37, 99, 235, 0.1);
+  border-radius: 50%;
+  background: rgba(37, 99, 235, 0.92);
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.24);
+}
+
+.project-media-control:hover {
+  background: var(--theme-color-dark);
+}
+
+.project-media-control span {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.project-media-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.65rem;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12);
+}
+
+.project-media-dot {
+  width: 0.7rem;
+  height: 0.7rem;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(37, 99, 235, 0.22);
+  cursor: pointer;
+}
+
+.project-media-dot.is-active {
+  background: var(--theme-color);
 }
 
 .project-content {
   display: grid;
+  align-content: start;
   gap: 1rem;
 }
 
@@ -377,6 +473,11 @@ a {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+}
+
+.experience-card {
+  direction: ltr;
+  text-align: left;
 }
 
 .experience-company {
@@ -400,7 +501,9 @@ a {
 
 .experience-points {
   margin: 1rem 0 0;
-  padding-left: 1.15rem;
+  padding-left: 1.25rem;
+  text-align: left;
+  list-style-position: outside;
 }
 
 .experience-points li + li {
@@ -409,6 +512,7 @@ a {
 
 .contact-card {
   display: grid;
+  align-items: center;
   gap: 1.5rem;
 }
 
@@ -489,7 +593,6 @@ a {
   .content-card,
   .skill-card,
   .project-content,
-  .experience-card,
   .contact-card,
   .contact-item,
   .site-nav a {
@@ -503,8 +606,7 @@ a {
 
   .hero-actions,
   .tag-list,
-  .project-links,
-  .experience-header {
+  .project-links {
     justify-content: center;
   }
 
@@ -513,9 +615,30 @@ a {
   }
 
   .experience-points {
-    padding-left: 0;
-    list-style-position: inside;
-    text-align: center;
+    padding-left: 1.25rem;
+    text-align: left;
+    list-style-position: outside;
+  }
+
+  .project-media {
+    padding: 0.85rem;
+  }
+
+  .project-media-shell {
+    width: min(100%, 18.5rem);
+    padding: 0.45rem;
+  }
+
+  .project-media-navigation {
+    margin-top: 0.7rem;
+  }
+
+  .project-media-control {
+    display: none;
+  }
+
+  .project-media-dots {
+    padding: 0.38rem 0.55rem;
   }
 }
 
@@ -528,6 +651,19 @@ a {
   .project-card,
   .contact-card {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .project-card {
+    gap: 1.35rem;
+  }
+
+  .project-content {
+    padding-block: 0.25rem;
+  }
+
+  .contact-card .button {
+    justify-self: stretch;
+    align-self: center;
   }
 
   .skills-grid {

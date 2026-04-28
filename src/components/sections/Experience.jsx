@@ -11,13 +11,13 @@ function Experience({ items }) {
     >
       <div className="experience-list">
         {items.map((item) => (
-          <Card key={`${item.company}-${item.role}`} className="experience-card">
+          <Card key={item.role} className="experience-card">
             <div className="experience-header">
               <div>
                 <h3>{item.role}</h3>
-                <p className="experience-company">{item.company}</p>
+                {item.company && <p className="experience-company">{item.company}</p>}
               </div>
-              <span className="experience-period">{item.period}</span>
+              {item.period && <span className="experience-period">{item.period}</span>}
             </div>
 
             <ul className="experience-points">

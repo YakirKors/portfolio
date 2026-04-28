@@ -1,12 +1,8 @@
 import { useState } from 'react'
+import headerProfileImage from '../../assets/images/projects/profilePic/283e1529-855e-4cb2-80da-f773d0be93dc.jpg'
 
 function Header({ links }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  // Replace this empty string with an imported image from
-  // `src/assets/images/profile-placeholder.png` when ready.
-  // Example:
-  // import headerProfileImage from '../../assets/images/profile-placeholder.png'
-  const headerProfileImage = ''
 
   const handleLinkClick = () => {
     setIsMenuOpen(false)

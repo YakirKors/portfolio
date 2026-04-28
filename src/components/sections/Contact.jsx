@@ -17,7 +17,7 @@ const contactItems = [
   {
     label: 'Phone',
     value: contactDetails.phone,
-    href: `tel:${contactDetails.phone}`,
+    href: `tel:${contactDetails.phone.replace(/\s/g, '')}`,
   },
 ]
 
@@ -34,7 +34,7 @@ function Contact() {
           {contactItems.map((item) => (
             <div key={item.label} className="contact-item">
               <p className="contact-label">{item.label}</p>
-              <a href={item.href} target="_blank" rel="noreferrer">
+              <a href={item.href}>
                 {item.value}
               </a>
             </div>

@@ -7,7 +7,6 @@ function Projects({ projects }) {
       id="projects"
       eyebrow="Projects"
       title="Selected mobile and product work."
-      description="Project cards are powered by `src/data/projects.js` so they stay easy to edit."
     >
       <div className="projects-grid">
         {projects.map((project) => (
