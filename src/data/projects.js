@@ -73,7 +73,7 @@ export const projects = [
   {
     title: 'Printy',
     description:
-      'A personal 3D printing project for showcasing prints, products, and marketplace-style discovery.',
+      'A full marketplace mobile app for buying and selling 3D-printed products, with seller stores, product uploads, real-time chat, search, filtering, notifications, and deep links. Built with clean Flutter architecture, Firebase integration, and full iOS and Android support.',
     techStack: ['Flutter', 'Firebase', 'Dart'],
     image: printyImages[0]?.src ?? '',
     images: printyImages,

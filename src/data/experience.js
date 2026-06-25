@@ -1,6 +1,8 @@
 export const experience = [
   {
     role: 'Full Stack Mobile Developer',
+    company: 'Calliber',
+    period: '2024 – Present',
     highlights: [
       'Led development of 3 production mobile apps (iOS & Android) using React Native (Expo).',
       'Built a platform connecting customers and service providers with marketplace and lead system flows.',

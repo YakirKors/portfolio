@@ -1,8 +1,8 @@
-import resumePdf from '../../assets/resume/Yakir_Kurs_FullStack_Developer.pdf'
+import resumePdf from '../../assets/resume/YakirKurs.pdf'
 import Section from '../layout/Section'
 import Card from '../ui/Card'
 
-const resumeFileName = 'Yakir_Kurs_FullStack_Developer.pdf'
+const resumeFileName = 'YakirKurs.pdf'
 
 const resumeHighlights = [
   'Full stack delivery across mobile apps, backend services, and cloud infrastructure.',

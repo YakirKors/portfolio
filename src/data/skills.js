@@ -1,11 +1,15 @@
 export const skills = [
   {
+    title: 'Languages',
+    items: ['JavaScript (Node.js)', 'C#'],
+  },
+  {
     title: 'Mobile',
-    items: ['React Native', 'Expo', 'Flutter'],
+    items: ['React Native (Expo)', 'Flutter'],
   },
   {
     title: 'Backend',
-    items: ['Node.js', 'REST APIs', 'WebSockets'],
+    items: ['REST APIs', 'WebSockets', 'Authentication'],
   },
   {
     title: 'Cloud & Database',
@@ -13,6 +17,6 @@ export const skills = [
   },
   {
     title: 'Tools',
-    items: ['GitHub', 'Docker', 'Postman', 'Cursor', 'AI-assisted development'],
+    items: ['GitHub', 'Docker', 'Postman'],
   },
 ]
